@@ -1,0 +1,1591 @@
+{
+	"info": {
+		"_postman_id": "b6ee738f-3095-48fe-baf9-ad3bac2cc7c7",
+		"name": "Book Selling / Purchasing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Book Selling Copy",
+			"item": [
+				{
+					"name": "Admin",
+					"item": [
+						{
+							"name": "1.Auth",
+							"item": [
+								{
+									"name": "Login",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "email",
+													"value": "admin@books.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "123",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/user/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"login"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "2. Customers",
+							"item": [
+								{
+									"name": "All",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/user/all",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Single",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "6268ed9f80619a4a586720df",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/user/single",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"single"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Riya",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "riya@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "1234",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/user/add",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "626a138e5e062301a9974527",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "true",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "Customer 2",
+													"type": "text"
+												},
+												{
+													"key": "email",
+													"value": "customer2@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "123",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/user/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"update"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "3. Category",
+							"item": [
+								{
+									"name": "All",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/category/all",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"category",
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Single",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "62678e205be44e8bae7a77f0",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/category/single",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"category",
+												"single"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Punjabi",
+													"type": "text"
+												},
+												{
+													"key": "category_image",
+													"type": "file",
+													"src": "/C:/Users/Dell Optiplex/Desktop/images/punjabi.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/category/add",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"category",
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "_id",
+													"value": "6268f46e9102de38b2625dee",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "false",
+													"type": "text"
+												},
+												{
+													"key": "category_image",
+													"type": "file",
+													"src": []
+												},
+												{
+													"key": "name",
+													"value": "Accesories",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/category/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"category",
+												"update"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "4. Sub Category",
+							"item": [
+								{
+									"name": "All",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": []
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/subcategory/all",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"subcategory",
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Single",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "6269162103bd225b7004b483",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/subcategory/single",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"subcategory",
+												"single"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "BioGraphies",
+													"type": "text"
+												},
+												{
+													"key": "subcategory_image",
+													"type": "file",
+													"src": "/C:/Users/Dell Optiplex/Desktop/images/1_AQ2Sm9PbZ31L5y7hGr_sFA.jpeg"
+												},
+												{
+													"key": "categoryId",
+													"value": "626a3642b6e526b56ea926a1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/subcategory/add",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"subcategory",
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "_id",
+													"value": "626a369db6e526b56ea926ae",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "true",
+													"type": "text"
+												},
+												{
+													"key": "subcategory_image",
+													"type": "file",
+													"src": "/C:/Users/Dell Optiplex/Desktop/images/biography-clipart-biography.jpg"
+												},
+												{
+													"key": "name",
+													"value": "Rings",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "categoryId",
+													"value": "6268f46e9102de38b2625dee",
+													"type": "text",
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/subcategory/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"subcategory",
+												"update"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "5. Books",
+							"item": [
+								{
+									"name": "All",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/book/all",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"book",
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Single",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "626a37acb65eaab4eadf6143",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/book/single",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"book",
+												"single"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Ignited Minds",
+													"type": "text"
+												},
+												{
+													"key": "book_image",
+													"type": "file",
+													"src": "/C:/Users/Dell Optiplex/Desktop/images/ignited-minds.jpeg"
+												},
+												{
+													"key": "categoryId",
+													"value": "626a3642b6e526b56ea926a1",
+													"type": "text"
+												},
+												{
+													"key": "subcategoryId",
+													"value": "626a369db6e526b56ea926ae",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1500",
+													"type": "text"
+												},
+												{
+													"key": "author",
+													"value": "APG Abdul Kalam",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/book/add",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"book",
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "_id",
+													"value": "626928446df90316b74b2e50",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "true",
+													"type": "text"
+												},
+												{
+													"key": "subcategory_image",
+													"type": "file",
+													"src": [],
+													"disabled": true
+												},
+												{
+													"key": "name",
+													"value": "APJ",
+													"type": "text"
+												},
+												{
+													"key": "categoryId",
+													"value": "6268f46e9102de38b2625dee",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "subcategoryId",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "price",
+													"value": "4000",
+													"type": "text"
+												},
+												{
+													"key": "author",
+													"value": "XYZ",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/book/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"book",
+												"update"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "6.Orders",
+							"item": [
+								{
+									"name": "All",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/order/all",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"order",
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Single",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "626a22f6944654394c0c58e9",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/order/single",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"order",
+												"single"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "626a46f5d6227f6efa522479",
+													"type": "text"
+												},
+												{
+													"key": "orderStatus",
+													"value": "3",
+													"description": " 1-> Placed , 2-> Confirmed , 3=> Shipped , 4=>Delivered , 5=> Cancelled\n",
+													"type": "text"
+												},
+												{
+													"key": "shipmentUrl",
+													"value": "xyz.com",
+													"description": "//optional",
+													"type": "text"
+												},
+												{
+													"key": "trackingId",
+													"value": "32561",
+													"description": "//optional",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/order/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"order",
+												"update"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "7. Dashboard",
+							"item": [
+								{
+									"name": "get dashboard",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/dashboard",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"dashboard"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "1.Auth",
+							"item": [
+								{
+									"name": "Login",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "email",
+													"value": "riya@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "1234",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/user/login",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"login"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Register",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "email",
+													"value": "mohit@gmail.com",
+													"type": "text"
+												},
+												{
+													"key": "password",
+													"value": "123",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "Mohit",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/user/add",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Profile",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{customerToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "626a348db6e526b56ea92698",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/user/single",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"single"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "2. Category",
+							"item": [
+								{
+									"name": "All",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/category/all",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"category",
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Single",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "62678e205be44e8bae7a77f0",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/category/single",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"category",
+												"single"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "3. Sub Category",
+							"item": [
+								{
+									"name": "All",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "categoryId",
+													"value": "6268f46e9102de38b2625dee",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/subcategory/all",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"subcategory",
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Single",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{customerToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "6269162103bd225b7004b483",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/subcategory/single",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"subcategory",
+												"single"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "4. Books",
+							"item": [
+								{
+									"name": "All",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "sellerId",
+													"value": "626a3104a2a43ba44a37862b",
+													"description": "// to get own books",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/book/all",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"book",
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Single",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "626a3c2754cf0d9e7879ea0d",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/book/single",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"book",
+												"single"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{customerToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name",
+													"value": "Wings Of Fire",
+													"type": "text"
+												},
+												{
+													"key": "categoryId",
+													"value": "626a3642b6e526b56ea926a1",
+													"type": "text"
+												},
+												{
+													"key": "subcategoryId",
+													"value": "626a369db6e526b56ea926ae",
+													"type": "text"
+												},
+												{
+													"key": "price",
+													"value": "1500",
+													"type": "text"
+												},
+												{
+													"key": "author",
+													"value": "APG Abdul Kalam",
+													"type": "text"
+												},
+												{
+													"key": "book_image",
+													"type": "file",
+													"src": "/C:/Users/Dell Optiplex/Desktop/images/1-1539586609.jpg"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/book/add",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"book",
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{adminToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "_id",
+													"value": "626928446df90316b74b2e50",
+													"type": "text"
+												},
+												{
+													"key": "status",
+													"value": "true",
+													"type": "text"
+												},
+												{
+													"key": "subcategory_image",
+													"type": "file",
+													"src": [],
+													"disabled": true
+												},
+												{
+													"key": "name",
+													"value": "Gold Ring",
+													"type": "text"
+												},
+												{
+													"key": "categoryId",
+													"value": "6268f46e9102de38b2625dee",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "subcategoryId",
+													"value": "",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "price",
+													"value": "4000",
+													"type": "text"
+												},
+												{
+													"key": "author",
+													"value": "",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/book/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"book",
+												"update"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "5. Order",
+							"item": [
+								{
+									"name": "All",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{customerToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "userId",
+													"value": "626a3256b6e526b56ea92693",
+													"description": "// to get ordersPlaced by me",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "sellerId",
+													"value": "626a3256b6e526b56ea92693",
+													"description": "// to get my orders",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/order/all",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"order",
+												"all"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Single",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{customerToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "626a22f6944654394c0c58e9",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/order/single",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"order",
+												"single"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Add",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{customerToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "bookId",
+													"value": "626a454254cf0d9e7879ea18",
+													"type": "text"
+												},
+												{
+													"key": "userId",
+													"value": "626a348db6e526b56ea92698",
+													"type": "text"
+												},
+												{
+													"key": "address",
+													"value": "hno 3,Model Town, Jalandhar",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/order/add",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"order",
+												"add"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Cancel Order",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{customerToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "orderStatus",
+													"value": "5",
+													"type": "text"
+												},
+												{
+													"key": "_id",
+													"value": "626a255fe9c544f1b0db0dbb",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/order/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"order",
+												"update"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update Order (as seller)",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Authorization",
+												"value": "{{customerToken}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "_id",
+													"value": "626a46f5d6227f6efa522479",
+													"type": "text"
+												},
+												{
+													"key": "orderStatus",
+													"value": "3",
+													"description": " 1-> Placed , 2-> Confirmed , 3=> Shipped , 4=>Delivered , 5=> Cancelled\n",
+													"type": "text"
+												},
+												{
+													"key": "shipmentUrl",
+													"value": "xyz.com",
+													"description": "//optional",
+													"type": "text"
+												},
+												{
+													"key": "trackingId",
+													"value": "32561",
+													"description": "//optional",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/order/update",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"order",
+												"update"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
