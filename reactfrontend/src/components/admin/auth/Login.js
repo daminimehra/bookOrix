@@ -4,15 +4,20 @@ import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import qs from "qs";
 import "react-toastify/dist/ReactToastify.css";
+
 function Login() {
+  // State variables for email and password
   let [email, setEmail] = useState("");
   const saveEmail = (e) => {
     setEmail(e.target.value);
   };
+
   let [password, setPassword] = useState("");
   const savePassword = (e) => {
     setPassword(e.target.value);
   };
+
+  // Function to handle user login
   const LoginUSer = (e) => {
     e.preventDefault();
     console.log(email, password);
@@ -21,6 +26,7 @@ function Login() {
       email: email,
       password: password,
     };
+
     axios
       .post("http://localhost:3008/api/user/login", qs.stringify(postData), {
         headers: {
@@ -29,36 +35,44 @@ function Login() {
       })
       .then((data) => {
         console.log(data);
+
+        // If login is successful
         if (data.data.success) {
+          // Save user data to sessionStorage
           sessionStorage.setItem("token", data.data.token);
           sessionStorage.setItem("uid", data.data.data._id);
           sessionStorage.setItem("user_type", data.data.data.userType);
-          toast.success(data.data.message);
+
+          // Display success toast notification
+         
         }
+
+        // Set a timeout for displaying the toast notification
         setTimeout(() => {
           data.data.success
             ? toast.success(data.data.message)
             : toast.error(data.data.message);
+
           if (data.data.success) {
-            // console.log(sessionStorage.getItem('uid'))
-            // window.location.reload(true);
-            // navigate("/");
+            // Redirect the user to the appropriate page based on user type
             if (data.data.data.userType === 1) {
               window.location.href = "/admin/home";
             } else {
-              toast.danger("You can not access this page");
+              toast.error("You can not access this page");
             }
           }
         }, 1000);
       });
-    // let navigate = useNavigate();
-    //   navigate(`/addnotes`);
   };
+
+  // Hook for navigating to other pages
   let navigate = useNavigate();
   let changePage = (e) => {
     navigate(`/admin/home`);
     Login();
   };
+
+  // Component rendering
   return (
     <>
       <section className="vh-100">
