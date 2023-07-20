@@ -19,7 +19,7 @@ app.use('/api', apiRoutes)
 
 
 
-// require('./server/config/seed')
+require('./server/config/seed')
 app.listen(PORT, () => {
     console.log("Server Listerning to port ", PORT)
 })
